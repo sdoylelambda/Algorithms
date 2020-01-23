@@ -2,19 +2,15 @@
 
 import math
 
+# 'milk': 100, 'flour': 4, 'sugar': 10, 'butter': 5 }, { 'milk': 1288, 'flour': 9, 'sugar': 95
+
 # SAMPLE INPUT
 recipes = {
-  'eggs': 5,
-  'butter': 10,
-  'sugar': 8,
-  'flour': 15
+  'milk': 100, 'butter': 50, 'cheese': 10
 }
 
 ingredients = {
-  'eggs': 5,
-  'butter': 10,
-  'sugar': 8,
-  'flour': 15
+  'milk': 198, 'butter': 52,
 }
 # EXPECTED SAMPLE RETURN === 0
 
@@ -29,15 +25,41 @@ def recipe_batches(recipes, ingredients):
   #   return a // b
   #   do for each item in dictionary
   #   final return smallest number from above
+  # x = 0
+  # recipes[x] - ingredients[x]
+  numOfBatches = 0
 
+  # for recipe in recipes:
+  #   r = recipe
+  #   # print(r)
+  #   print(recipes.get(r))
+  #
+  #   for ingredient in ingredients:
+  #     i = ingredient
+  #     print(ingredients.get(i))
+  #
+  #     recipes[r] - ingredients[i]
+  #     if recipes[r] > 0:
+  #         print('r', recipes[r])
 
-  for recipe in recipes:
-    r = recipe
-    print(r)
-    print(recipes.get(r))
-
+  max_batches = 0
+  for recipe_ingredient in recipes:
+    if recipe_ingredient not in ingredients:
+      print('nothing')
+      return 0
+    elif recipe_ingredient in ingredients:
+      current_max = ingredients[recipe_ingredient] // recipes[recipe_ingredient]
+      print('x',current_max)
+      if current_max <= 0:
+        return 0
+      elif max_batches == 0 or current_max < max_batches:
+        max_batches = current_max
+      print(max_batches)
+      return max_batches
 
 recipe_batches(recipes, ingredients)
+
+
 
 
 

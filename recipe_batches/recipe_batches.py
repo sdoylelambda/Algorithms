@@ -10,7 +10,7 @@ recipes = {
 }
 
 ingredients = {
-  'milk': 198, 'butter': 52,
+  'milk': 1948, 'butter': 542, 'cheese': 20
 }
 # EXPECTED SAMPLE RETURN === 0
 
@@ -52,7 +52,7 @@ def recipe_batches(recipes, ingredients):
       print('x',current_max)
       if current_max <= 0:
         return 0
-      elif max_batches == 0 or current_max < max_batches:
+      elif max_batches == 0 or current_max < max_batches and recipe_ingredient not in ingredients:
         max_batches = current_max
       print(max_batches)
       return max_batches

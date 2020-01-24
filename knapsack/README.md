@@ -1,10 +1,16 @@
 # The Knapsack Problem
 
-Suppose you are Indiana Jones, and you have found the secret entrance to the Temple of Doom. Before you is a multitude of artifacts and treasures - pots, gemstones, works of art, and more. These belong in a museum! But there are soldiers hot on your heels, and you can only carry so much...
+Suppose you are Indiana Jones, and you have found the secret entrance to the Temple of Doom. 
+Before you is a multitude of artifacts and treasures - pots, gemstones, works of art, and more. 
+These belong in a museum! But there are soldiers hot on your heels, and you can only carry so much...
 
-You, brave explorer, are facing the knapsack problem - maximizing the value of a set of items you select that are constrained by total size/weight. The size and the value of an item need not be correlated - the most precious item may be a tiny gemstone. But it turns out it's pretty tricky to get a truly optimal solution, and that a bruteforce approach really doesn't scale.
+You, brave explorer, are facing the knapsack problem - maximizing the value of a set of items you select that 
+are constrained by total size/weight. The size and the value of an item need not be correlated 
+- the most precious item may be a tiny gemstone. But it turns out it's pretty tricky to get a truly 
+optimal solution, and that a bruteforce approach really doesn't scale.
 
-A bit more motivation - this is a very general optimization problem that can be applied in a multitude of situations, from resource selection and allocation to stuffing stolen goods in knapsacks.
+A bit more motivation - this is a very general optimization problem that can be applied in a multitude of 
+situations, from resource selection and allocation to stuffing stolen goods in knapsacks.
 
 ![xkcd "NP-Complete"](https://imgs.xkcd.com/comics/np_complete.png "General solutions get you a 50% tip.")
 
@@ -23,9 +29,16 @@ The specific goal of this exercise is to write a program that takes input files 
 10 34 12
 ```
 
-The first row number is just a row/observation number, to facilitate reading and referring to items. The second number is the size/cost of the item, i.e. the cost of putting it in your knapsack. The third number is the value, i.e. the utility/payoff you get for selecting that item. The program should also take as input a total size, which can just be a number passed from the command line. So execution may look like this: `python knapsack.py input.txt 100`.
+The first row number is just a row/observation number, to facilitate reading and referring to items. 
+The second number is the size/cost of the item, i.e. the cost of putting it in your knapsack. 
+The third number is the value, i.e. the utility/payoff you get for selecting that item. 
+The program should also take as input a total size, which can just be a number passed from the command line. 
+So execution may look like this: `python knapsack.py input.txt 100`.
 
-The goal is to select a subset of the items to maximize the payoff such that the cost is below some threshold. That is, the output should be a set of items (identified by number) that solves the Knapsack problem. It's also worth outputting the total cost and value of these items. This can all just be printed and may look something like below.
+The goal is to select a subset of the items to maximize the payoff such that the cost is below some threshold. 
+That is, the output should be a set of items (identified by number) that solves the Knapsack problem. 
+It's also worth outputting the total cost and value of these items. This can all just be printed and 
+may look something like below.
 
 This is *not* a solution, just an example:
 
